@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, onSubmit }) => {
   return (
-    <ul>
+    <ul onSubmit={onSubmit}>
       {contacts.map(({ id, name, number }) => (
         <li key={id}>
           {name}:{number}
