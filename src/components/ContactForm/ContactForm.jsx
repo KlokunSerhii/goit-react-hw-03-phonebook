@@ -23,6 +23,7 @@ class ContactForm extends Component {
     name.value = '';
     number.value = '';
   };
+
   render() {
     return (
       <>
@@ -56,4 +57,7 @@ class ContactForm extends Component {
   }
 }
 
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 export default ContactForm;
