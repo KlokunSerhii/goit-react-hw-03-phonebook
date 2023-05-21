@@ -55,7 +55,5 @@ class ContactForm extends Component {
     );
   }
 }
-ContactForm.prototype = {
-  onSubmit: PropTypes.func.isRequired,
-};
+
 export default ContactForm;
