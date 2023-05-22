@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
-
-const ContactList = ({ contacts, onSubmit }) => {
+import { Button, Li } from './ContactList.styled';
+const ContactList = ({ contacts, onDelete }) => {
   return (
-    <ul onSubmit={onSubmit}>
+    <ul>
       {contacts.map(({ id, name, number }) => (
-        <li key={id}>
+        <Li key={id}>
           {name}:{number}
-        </li>
+          <Button onClick={() => onDelete(id)}>Delete </Button>
+        </Li>
       ))}
     </ul>
   );

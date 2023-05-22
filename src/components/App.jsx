@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
+import { Title, Div, TitleList } from './App.styled';
 
 class App extends Component {
   state = {
@@ -16,11 +17,21 @@ class App extends Component {
   };
   handelAddContact = data => {
     data.id = nanoid();
-    this.setState(prevState => ({ contacts: [data, ...prevState.contacts] }));
+    const find = this.state.contacts.find(
+      element => element.name.toLowerCase() === data.name.toLowerCase()
+    );
+
+    find
+      ? alert(find.name + ' is already in contacts.')
+      : this.setState(prevState => ({
+          contacts: [data, ...prevState.contacts],
+        }));
   };
+
   changeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
   };
+
   getVisibleFilters = () => {
     const { filter, contacts } = this.state;
     const normalizedFilter = filter.toLowerCase();
@@ -29,17 +40,22 @@ class App extends Component {
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
+  deleteContacts = id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
+  };
 
   render() {
     const visibleFilters = this.getVisibleFilters();
     return (
-      <>
-        <h1>Phonebook</h1>
+      <Div>
+        <Title>Phonebook</Title>
         <ContactForm onSubmit={this.handelAddContact} />
-        <h2>Contacts</h2>
+        <TitleList>Contacts</TitleList>
         <Filter onChange={this.changeFilter} value={this.state.filter} />
-        <ContactList contacts={visibleFilters} />
-      </>
+        <ContactList contacts={visibleFilters} onDelete={this.deleteContacts} />
+      </Div>
     );
   }
 }
