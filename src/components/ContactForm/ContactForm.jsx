@@ -13,12 +13,6 @@ class ContactForm extends Component {
     this.props.onSubmit(values);
     resetForm();
   };
-  reset = e => {
-    this.setState({ name: '' });
-    const { name, number } = e.currentTarget;
-    name.value = '';
-    number.value = '';
-  };
 
   render() {
     const { name, number } = this.state;

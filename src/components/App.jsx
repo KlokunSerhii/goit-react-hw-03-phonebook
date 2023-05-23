@@ -15,16 +15,20 @@ class App extends Component {
     ],
     filter: '',
   };
-  handelAddContact = data => {
-    data.id = nanoid();
+  handleSubmit = ({ name, number }) => {
+    const newContacts = {
+      name,
+      number,
+      id: nanoid(),
+    };
     const find = this.state.contacts.find(
-      element => element.name.toLowerCase() === data.name.toLowerCase()
+      element => element.name.toLowerCase() === name.toLowerCase()
     );
 
     find
       ? alert(find.name + ' is already in contacts.')
       : this.setState(prevState => ({
-          contacts: [data, ...prevState.contacts],
+          contacts: [newContacts, ...prevState.contacts],
         }));
   };
 
@@ -51,7 +55,7 @@ class App extends Component {
     return (
       <Div>
         <Title>Phonebook</Title>
-        <ContactForm onSubmit={this.handelAddContact} />
+        <ContactForm onSubmit={this.handleSubmit} />
         <TitleList>Contacts</TitleList>
         <Filter onChange={this.changeFilter} value={this.state.filter} />
         <ContactList contacts={visibleFilters} onDelete={this.deleteContacts} />
