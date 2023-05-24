@@ -39,7 +39,7 @@ export const Button = styled.button`
   padding: 5px 10px;
   font-size: 16px;
   font-weight: 700;
-  border: #00fa00;
+  border: none;
   background-color: #00fa00;
   svg {
     width: 40px;
@@ -47,8 +47,6 @@ export const Button = styled.button`
     color: #ffffff;
   }
   &: hover {
-    border: #eefa05;
     background-color: #eefa05;
-    color: #ffffff;
   }
 `;

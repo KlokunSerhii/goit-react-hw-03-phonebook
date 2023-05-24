@@ -21,7 +21,7 @@ export const Button = styled.button`
   font-size: 16px;
   font-weight: 700;
   margin-left: 10px;
-  border: #fa0505;
+  border: none;
   background-color: #fa0505;
   color: #c2ddf0;
   svg {
@@ -30,6 +30,5 @@ export const Button = styled.button`
   }
   &: hover {
     background-color: #fa8c05;
-    color: #c2ddf0;
   }
 `;
