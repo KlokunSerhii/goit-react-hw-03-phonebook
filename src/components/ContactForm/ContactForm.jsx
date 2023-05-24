@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Label, Forma, Input, Button } from './ContactForm.styled';
-
+import { HiPlusCircle } from 'react-icons/hi';
 class ContactForm extends Component {
   state = {
     name: '',
@@ -40,7 +40,9 @@ class ContactForm extends Component {
               required
             />
           </Label>
-          <Button type="submit">Add contact</Button>
+          <Button type="submit" aria-label="add contact">
+            <HiPlusCircle />
+          </Button>
         </Forma>
       </Formik>
     );
