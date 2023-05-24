@@ -29,7 +29,7 @@ export const Input = styled(Field)`
   outline: none;
   border: 1px solid black;
   &:focus {
-    border: 3px solid #00fa00;
+    border: 4px solid #00fa00;
   }
 `;
 
