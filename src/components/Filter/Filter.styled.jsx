@@ -1,27 +1,26 @@
 import styled from 'styled-components';
 
 export const Label = styled.label`
+  position: relative;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 0 15px;
   font-size: 24px;
   font-weight: 600;
   svg {
-    margin-left: 5px;
-    width: 40px;
-    height: 40px;
-    color: #000000;
-  }
-  svg:hover {
-    color: #07cdfa;
+    position: absolute;
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+    color: rgb(0, 0, 0, 0.5);
   }
 `;
 export const Input = styled.input`
   width: 500px;
   height: 25px;
-  padding: 7px 15px;
+  padding: 10px 45px;
   border-radius: 5px;
   outline: none;
   border: 1px solid black;

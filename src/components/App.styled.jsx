@@ -12,7 +12,7 @@ export const Div = styled.div`
   width: 600px;
   margin: 0 auto;
   padding: 0 10px;
-  background-color: #c2ddf0;
+  background-color: #63876f;
   padding-bottom: 20px;
   border: 1px solid;
   border-radius: 10px;

@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { Form, Field } from 'formik';
 
 export const Forma = styled(Form)`
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   background-color: #ebf0eb;
   border: 1px solid;
   border-radius: 7px;
-  padding: 20px;
+  padding: 20px 20px 80px 20px;
 `;
 
 export const Label = styled.label`
@@ -22,7 +23,8 @@ export const Label = styled.label`
 
 export const Input = styled(Field)`
   width: 500px;
-  height: 20px;
+  height: 25px;
+  font-size: 26px;
   padding: 7px 15px;
   margin-top: 10px;
   border-radius: 5px;
@@ -34,6 +36,9 @@ export const Input = styled(Field)`
 `;
 
 export const Button = styled.button`
+  position: absolute;
+  right: 35px;
+  bottom: 20px;
   display: flex;
   border-radius: 10px;
   padding: 5px 10px;
